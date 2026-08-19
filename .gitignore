@@ -1,0 +1,9 @@
+.env
+.env.local
+*.log
+__pycache__/
+*.pyc
+input/*.json
+input/*.csv
+.idea/
+.vscode/
