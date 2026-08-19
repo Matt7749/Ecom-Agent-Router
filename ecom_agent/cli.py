@@ -11,13 +11,13 @@ def main():
     args = parser.parse_args()
     
     if args.command == "run":
-        print(f"🚀 Running Ecom-Agent-Router Batch Customizer...")
-        print(f"📥 Input: {args.input} | 📤 Output: {args.output}")
-        print("✅ Customization Pipeline completed successfully!")
+        print("[Ecom-Agent-Router] Running Batch Customizer...")
+        print(f"Input: {args.input} | Output: {args.output}")
+        print("[SUCCESS] Customization Pipeline completed successfully!")
     elif args.command == "analyze":
-        print(f"🔍 Running Competitor Intelligence Analyzer...")
-        print(f"🔑 Keywords: {args.keywords or 'Default Target Keywords'}")
-        print("✅ Competitor Analysis completed successfully!")
+        print("[Ecom-Agent-Router] Running Competitor Intelligence Analyzer...")
+        print(f"Keywords: {args.keywords or 'Default Target Keywords'}")
+        print("[SUCCESS] Competitor Analysis completed successfully!")
 
 if __name__ == "__main__":
     main()

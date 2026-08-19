@@ -19,6 +19,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -e .
-    - name: Run CLI Test
+    - name: Run Package & CLI Tests
       run: |
-        ecom-agent run --input ./input
+        python -c "import ecom_agent; print('Package import test passed! Version:', ecom_agent.__version__)"
+        python -m ecom_agent.cli run --input ./input --output ./output
+        python -m ecom_agent.cli analyze --keywords "test"

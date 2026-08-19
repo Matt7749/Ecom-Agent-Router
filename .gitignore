@@ -1,9 +1,15 @@
-.env
+﻿.env
 .env.local
 *.log
 __pycache__/
 *.pyc
-input/*.json
-input/*.csv
+
+# Local Data Folders
+input/
+output/
+!input/.gitkeep
+!output/.gitkeep
+
+# IDEs
 .idea/
 .vscode/

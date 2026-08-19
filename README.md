@@ -1,132 +1,94 @@
-# 🚀 Ecom-Agent-Router (Windly AI Agent)
+# 🚀 Ecom-Agent-Router (Global E-Commerce AI Agent)
 
-> **Autonomous AI Agent Framework for E-Commerce Listing Optimization with Dynamic MD Persona Switching & Competitor Intelligence**
+> **Autonomous AI Agent Framework for Global E-Commerce Optimization (Amazon FBA, Shopify, eBay, Etsy, Naver, Coupang) with Dynamic MD Persona Switching & Competitor Intelligence**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Agent Skills Compliant](https://img.shields.io/badge/Agent_Skills-v1.0-green.svg)](https://agentskills.io)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-[**English**](./README.md) | [**한국어 가이드**](./README_KR.md)
+[**English (Global)**](./README.md) | [**한국어 가이드**](./README_KR.md)
 
 ---
 
-## 🌟 Key Features
+## 🌟 Key Global Features
 
-- **🎭 Dynamic MD Persona Switching**: Automatically routes product items to specialized Merchandiser (MD) personas (e.g., *7-Year Senior Single-Household MD*, *Trend Style MD*, *Tech Reviewer MD*, *Pet Life MD*) based on product category detection.
-- **🕵️‍♂️ Competitor Intelligence Integration**: Scrapes real-time competitor listings and review pain-points (via Apify REST API, Naver Shopping, Coupang) to generate high-converting Unique Selling Points (USPs).
-- **🛡️ Instant Brand & Compliance Shield**: Built-in regex and heuristic filters for trademark violation prevention (e.g., removing unauthorized brand names like Xiaomi, Apple, Dyson) and false claim mitigation.
-- **⚡ Scale-Proof Category Architecture**: Add new category-specific domain rules into `.agents/rules/categories/` as simple Markdown modules without code rewrites.
-- **📊 Multi-Format Batch Export**: Automatically parses raw CSV/Excel data (e.g., Windly export) and outputs SEO-optimized product titles (60 chars), 15 long-tail tags, hook copy, and cleaned option lists into Markdown & CSV.
-
----
-
-## 🏗️ System Architecture
-
-```mermaid
-graph TD
-    A[Raw Input Data / Windly Export CSV] --> B[Ecom-Agent-Router Engine]
-    C[Apify Competitor Scraper] --> B
-    
-    subgraph "Core Agent Pipeline"
-        B --> D{Category Classifier}
-        D -->|Living & Kitchen| E[Senior Single-Household MD Persona]
-        D -->|Fashion & Apparel| F[Trend Style MD Persona]
-        D -->|Digital & Tech| G[Tech Reviewer MD Persona]
-        D -->|Pet Supplies| H[Pet Life MD Persona]
-        
-        E --> I[Pro-Seller Compliance & SEO Rules]
-        F --> I
-        G --> I
-        H --> I
-    end
-    
-    I --> J[Competitor Pain-Point Targeter]
-    J --> K[SEO Title + Tags + Hooking Description + Options]
-    K --> L[Output Markdown & CSV Artifacts]
-```
+- **🌐 Multi-Marketplace Optimization**: Native support for **Amazon FBA, Shopify, eBay, Etsy, AliExpress/1688**, as well as Korean top marketplaces (Naver Shopping, Coupang).
+- **🎭 Dynamic MD Persona Switching**: Automatically routes items to specialized Merchandiser (MD) personas (e.g., *Amazon FBA Listing Specialist*, *Shopify Brand Style MD*, *Tech Reviewer MD*, *Pet Life MD*) based on category detection.
+- **🕵️‍♂️ Global Competitor Intelligence**: Integrates with Apify REST API to scrape Amazon Bestsellers, Shopify catalog stores, AliExpress, and Coupang to extract high-converting Unique Selling Points (USPs).
+- **🛡️ US/EU Brand & Compliance Shield**: Built-in regex and heuristic filters for Amazon Brand Registry & US/EU trademark protection (removes restricted brand keywords like Apple, Dyson, Xiaomi) and prevents false claim violations.
+- **⚡ Scale-Proof Category Architecture**: Extend category-specific domain rules inside `.agents/rules/categories/` as simple Markdown modules without rewrites.
+- **📊 Global Batch Export**: Formats raw supplier CSVs (Windly, 1688, Taobao, CJ Dropshipping) into Amazon Title (200 chars), 15 search keywords/tags, bullet points (USPs), and cleaned variant options into CSV & Markdown.
 
 ---
 
-## 🚀 Quick Start
-
-### 1. Installation
-
-```bash
-git clone https://github.com/your-username/Windly-Product-Custom.git
-cd Windly-Product-Custom
-pip install -e .
-```
-
-### 2. Environment Setup
-
-Copy `.env.example` to `.env` and set your optional API keys:
-
-```bash
-cp .env.example .env
-```
-
-```ini
-APIFY_API_TOKEN=your_apify_token_here
-```
-
-### 3. Usage
-
-#### Option A: Run via CLI
-
-```bash
-# Run batch customization on input products
-ecom-agent run --input ./input/products.csv --output ./output/result.csv
-
-# Run competitor analysis for target keywords
-ecom-agent analyze --keywords "mini air fryer, 1-person rice cooker"
-```
-
-#### Option B: Run via Antigravity / Claude Code Agent
-
-In Antigravity or Claude Code workspace:
-```text
-@product-customizer Process input files in ./input folder and generate optimized product listings.
-```
-
----
-
-## 📁 Repository Structure
+## 🔄 5-Step Master Seller Workflow
 
 ```text
-Windly-Product-Custom/
-├── .agents/
-│   ├── agents/
-│   │   ├── product-customizer.md       # Dynamic MD Persona Switching Main Agent
-│   │   └── competitor-analyzer.md      # Competitor Intelligence Analyst Agent
-│   ├── rules/
-│   │   ├── pro-seller-product-rules.md # Master Compliance & SEO Rules
-│   │   └── categories/                 # Modular Category MD Persona Rules
-│   │       ├── living-cook.md          # Kitchen & Single-Household MD
-│   │       ├── fashion.md              # Fashion & Apparel MD
-│   │       ├── digital.md              # Digital & Tech MD
-│   │       └── pet.md                  # Pet Life MD
-│   └── workflows/
-│       └── batch-product-custom.md     # Batch Pipeline Workflow
-├── ecom_agent/                         # Python Core SDK & CLI Source
-│   ├── __init__.py
-│   └── cli.py
-├── input/                              # Raw Windly CSV / Apify Scraped Datasets
-├── output/                             # Customized SEO Listings & CSV Exports
-└── pyproject.toml
+[Step 1] Seller inputs global target keywords (e.g., "mini air fryer", "portable desk fan")
+   ↓
+[Step 2] Apify Scraper crawls top 1% Amazon / Shopify / Naver / Coupang competitor listings automatically
+   ↓
+[Step 3] AI (@competitor-analyzer) delivers Phase 1 Global Competitor Intelligence Report (Pain points, USPs, Tags)
+   ↓
+[Step 4] Seller places raw sourced supplier CSV (1688, Taobao, Windly) in ./input folder
+   ↓
+[Step 5] AI (@product-customizer) generates Final Marketplace Upload CSV (output/final_upload_products.csv) targeting competitor weaknesses!
 ```
 
 ---
 
-## 🤝 Contributing
+## 🤖 Compatible AI Tools & Setup Guide
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an Issue.
+| AI Tool / Framework | Integration Difficulty | Recommended | How to Connect & Run |
+| :--- | :---: | :---: | :--- |
+| **Antigravity / Claude Code** | 1-Second | ⭐⭐⭐⭐⭐ | Open folder workspace ➔ Type `@product-customizer process input/` |
+| **Cursor AI / VS Code** | 10-Seconds | ⭐⭐⭐⭐⭐ | Open folder ➔ Reference `.agents/` rules in Chat |
+| **ChatGPT Custom GPTs** | 1-Minute | ⭐⭐⭐⭐☆ | Paste `pro-seller-product-rules.md` into Custom GPT Instructions |
+| **Claude Web / ChatGPT** | 30-Seconds | ⭐⭐⭐☆☆ | Paste `pro-seller-product-rules.md` at top of chat prompt |
+| **Python CLI SDK** | Developer | ⭐⭐⭐⭐⭐ | Run `pip install -e .` ➔ `ecom-agent run` |
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+---
+
+
+---
+
+## 🚀 [Killer Feature] Autonomous AI Mode (Apify MCP Server Integration)
+
+By integrating the **Apify MCP Server** into Claude Desktop or Cursor, you can achieve **Zero-Click Automation**. The AI will autonomously run scrapers, fetch data, and generate final upload CSVs directly from your chat prompt!
+
+### ⚙️ How to Connect (Claude Desktop / Cursor)
+
+1. Ensure [Node.js](https://nodejs.org/) is installed on your system.
+2. Copy the contents of the provided `mcp_config_template.json` file.
+3. Replace `YOUR_APIFY_API_TOKEN_HERE` with your actual token.
+4. Paste it into your AI tool's config file and restart:
+   - **Claude Desktop (Windows)**: `%APPDATA%\Claude\claude_desktop_config.json`
+   - **Claude Desktop (Mac)**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - **Cursor**: `Cursor Settings ➔ Features ➔ MCP ➔ Add New (Type: command, Command: npx -y @apify/mcp-server)`
+
+### 💬 Example Autonomous Prompt
+> *"AI, use the Apify MCP server to run the Coupang Scraper for 'mini air fryer' (max 20 items). Once done, analyze the data and generate the final marketplace upload CSV targeting their weaknesses!"*
+
+## 🛒 Setting Up Amazon, Shopify & AliExpress Scraping on Apify
+
+1. **Sign up at [Apify Store](https://apify.com/store)**.
+2. **Search Global Scrapers**:
+   - **Amazon:** `Amazon Product Scraper` or `Amazon Bestsellers Scraper`
+   - **Shopify:** `Shopify Product Scraper`
+   - **AliExpress / 1688:** `AliExpress Product Scraper`
+   - **Korean Top Markets:** `Naver Shopping Product Scraper` / `Coupang Scraper`
+3. **Configure Search Keywords / Store URLs** under `searchKeywords` or `startUrls`.
+4. Click **`Start / Run`** ➔ Crawled datasets automatically download into your `./input/` folder.
+
+---
+
+## 🚧 Roadmap & Upcoming Features
+
+- [ ] **[Step 0] Automated AI Trend Keyword Discovery Engine (In Development / Coming Soon 🚀)**:
+  - Automatically mines and suggests seasonal/trending blue-ocean keywords Top 10 from Google Trends & Amazon Search Volume.
+- [ ] **[Next-Gen Sourcing Engine] Direct Competitor Product Auto-Sourcing (Planned / Next-Gen 🌟)**:
+  - Direct 1:1 identical and similar product auto-sourcing from 1688/Taobao/AliExpress using AI computer vision & spec matching.
 
 ---
 
