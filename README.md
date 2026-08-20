@@ -1,6 +1,6 @@
-# 🚀 Ecom-Agent-Router (Global E-Commerce AI Agent)
+# 🚀 Ecom-Agent-Router (Cross-Border E-Commerce AI Agent)
 
-> **Autonomous AI Agent Framework for Global E-Commerce Optimization (Amazon FBA, Shopify, eBay, Etsy, Naver, Coupang) with Dynamic MD Persona Switching & Competitor Intelligence**
+> **Autonomous AI Agent Framework optimized for Cross-Border Sourcing (Domeggook/1688/Taobao) ➔ Korea Domestic Selling (Naver SmartStore, Coupang)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -13,8 +13,8 @@
 
 ## 🌟 Key Global Features
 
-- **🌐 Multi-Marketplace Optimization**: Native support for **Amazon FBA, Shopify, eBay, Etsy, AliExpress/1688**, as well as Korean top marketplaces (Naver Shopping, Coupang).
-- **🎭 Dynamic MD Persona Switching**: Automatically routes items to specialized Merchandiser (MD) personas (e.g., *Amazon FBA Listing Specialist*, *Shopify Brand Style MD*, *Tech Reviewer MD*, *Pet Life MD*) based on category detection.
+- **🌐 Cross-Border Selling Optimization**: Specialized for sourcing from local wholesale (Domeggook) and global B2B platforms (1688, Taobao) via Windly, and generating optimized output CSVs strictly formatted for Korea's top domestic marketplaces (Naver Shopping, Coupang).
+- **🎭 Dynamic MD Persona Switching**: Automatically routes items to specialized Merchandiser (MD) personas (e.g., *Korean Trend Style MD*, *Living & Tech Specialist MD*, *Pet Life MD*) based on category detection.
 - **🕵️‍♂️ Global Competitor Intelligence**: Integrates with Apify REST API to scrape Amazon Bestsellers, Shopify catalog stores, AliExpress, and Coupang to extract high-converting Unique Selling Points (USPs).
 - **🛡️ US/EU Brand & Compliance Shield**: Built-in regex and heuristic filters for Amazon Brand Registry & US/EU trademark protection (removes restricted brand keywords like Apple, Dyson, Xiaomi) and prevents false claim violations.
 - **⚡ Scale-Proof Category Architecture**: Extend category-specific domain rules inside `.agents/rules/categories/` as simple Markdown modules without rewrites.
@@ -88,7 +88,7 @@ By integrating the **Apify MCP Server** into Claude Desktop or Cursor, you can a
 - [ ] **[Step 0] Automated AI Trend Keyword Discovery Engine (In Development / Coming Soon 🚀)**:
   - Automatically mines and suggests seasonal/trending blue-ocean keywords Top 10 from Google Trends & Amazon Search Volume.
 - [ ] **[Next-Gen Sourcing Engine] Direct Competitor Product Auto-Sourcing (Planned / Next-Gen 🌟)**:
-  - Direct 1:1 identical and similar product auto-sourcing from 1688/Taobao/AliExpress using AI computer vision & spec matching.
+  - Direct 1:1 identical and similar product auto-sourcing from Domeggook/1688/Taobao using AI computer vision & spec matching.
 
 ---
 
